@@ -13,7 +13,7 @@
   console.log((a + b) * c)
 </script>
 
-<script id="ch0103/03">
+<script id="ch0103/03" type="xxx">
   var a = Number(prompt('请输入a'))
   var b = Number(prompt('请输入b'))
   var c = Number(prompt('请输入c'))
@@ -42,9 +42,9 @@
 <script id="ch0103/06" type="xxx">
   var a = Number(prompt('请输入甲流确诊数'))
   var b = Number(prompt('请输入甲流死亡率'))
-  c = (b / a * 100).toFixed(3)
+  var c = (b / a * 100).toFixed(3)
 
-  console.log('甲流的死亡率' + c + '%')
+  console.log(c)
 </script>
 
 <script id="ch0103/07" type="xxx">
@@ -61,8 +61,8 @@
 <script id="ch0103/08" type="xxx">
   var F = Number(prompt('请输入华氏温度'))
   C = 5 * (F - 32) / 9
-
-  console.log('摄氏温度' + C.toFixed(5))
+  C1 = C.toFixed(3)
+  console.log(C1)
 </script>
 
 <script id="ch0103/09" type="xxx">
@@ -86,7 +86,7 @@
   R = 1 / (1 / r1 + 1 / r2)
   R1 = R.toFixed(2)
 
-  console.log('并联之后的阻抗' + R1)
+  console.log(R1)
 </script>
 
 <script id="ch0103/11" type="xxx">
@@ -103,36 +103,37 @@
   V = 4 / 3 * π * r ** 3
   V1 = V.toFixed(2)
 
-  console.log('球的体积' + V1)
+  console.log(V1)
 </script>
 
-<script id="ch0103/13">
+<script id="ch0103/13" type="xxx">
   var n = Number(prompt('请输入一个三位数n'))
-  n1 = n - (n % 100) / 100
-  n2 = Math.ceil(n / 10 - n / 100)
-  n3 = n % 10
+  n3 = Math.trunc(n / 100)
+  n2 = (n - a1) / 10 % 10
+  n1 = n % 10
 
-  console.log('反向输出' + n3 + n2 + n1)
+  console.log(St)
 </script>
 
 <script id="ch0103/14" type="xxx">
   var h = Number(prompt('请输入小圆桶的深h'))
   var r = Number(prompt('请输入底边半径r'))
-  pi = 3.14159
-  x = r * r * pi * h
-  x1 = x / 1000
-  x2 = Math.ceil(20 / x1)
+  var pi = 3.14159
+  var x = r * r * pi * h
+  var 1 = x / 1000
+  var x2 = Math.ceil(20 / x1)
 
-  console.log('大象至少要喝水' + x2 + '桶')
+  console.log(x2)
 </script>
 
 <script id="ch0103/15" type="xxx">
   var n = Number(prompt('请输入苹果数量n'))
   var x = Number(prompt('请输入虫子吃掉一个苹果时间x'))
   var y = Number(prompt('请输入经过时间y'))
-  a = Math.ceil(y / x)
-  b = n - a
-  console.log('剩下苹果个数' + b)
+  var a = Math.ceil(y / x)
+  var b = n - a
+  
+  console.log(b)
 </script>
 
 <script id="ch0103/16" type="xxx">
@@ -140,11 +141,11 @@
   var Ya = Number(prompt('请输入坐标A的Y轴'))
   var Xb = Number(prompt('请输入坐标B的X轴'))
   var Yb = Number(prompt('请输入坐标B的Y轴'))
-  x1 = Math.sqrt(Xa * Xa + Ya * Ya)
-  x2 = Math.sqrt(Xb * Xb + Yb * Yb)
-  x3 = (x2 - x1).toFixed(3)
+  var x1 = Math.sqrt(Xa * Xa + Ya * Ya)
+  var x2 = Math.sqrt(Xb * Xb + Yb * Yb)
+  var x3 = (x2 - x1).toFixed(3)
 
-  console.log('线段AB长度' + x3)
+  console.log(x3)
 </script>
 
 <script id="ch0103/17" type="xxx">
@@ -162,15 +163,15 @@
   h = (h2- h1).toFixed(2)
   S = (a * h / 2).toFixed(2)
 
-  console.log('面积' + S)
+  console.log(S)
 </script>
 
 <script id="ch0103/18" type="xxx">
   var a1 = Number(prompt('请输入a1'))
   var a2 = Number(prompt('请输入a2'))
   var n = Number(prompt('请输入n'))
-  d = a2 - a1
-  An = a1 + (n - 1) * d
+  var d = a2 - a1
+  var An = a1 + (n - 1) * d
 
   console.log(An)
 </script>
@@ -178,15 +179,14 @@
 <script id="ch0103/19" type="xxx"> 
   var A = Number(prompt('请输入A'))
   var B = Number(prompt('请输入B'))
-  x = A * B
+  var x = A * B
 
   console.log(x)
 </script>
 
 <script id="ch0103/20" type="xxx">
  var n = Number(prompt('请输入n'))
- 0 <= n < 31
- x = 2 ** n
+ var x = 2 ** n
 
  console.log(x)
 </script>
