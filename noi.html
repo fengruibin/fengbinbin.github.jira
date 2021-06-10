@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- js第二天作业 -->
 <script id="ch0103/01" type="xxx">
   var a = Number(prompt('请输入a'))
   var b = Number(prompt('请输入b'))
@@ -186,10 +195,10 @@
 </script>
 
 <script id="ch0103/20" type="xxx">
- var n = Number(prompt('请输入n'))
- var x = 2 ** n
+  var n = Number(prompt('请输入n'))
+  var x = 2 ** n
 
- console.log(x)
+  console.log(x)
 </script>
 
 <script id="ch0104/01" type="x">
@@ -618,13 +627,59 @@ console.log(totalJ + totalY + totalT)
 
 </script>
 
-<script id="ch0105/0">
-  var m = Number(prompt(''))
-  var n = Number(prompt(''))
-  var m1
-  var m2
-  if (m >= 0 && m <= n && m <= 300){
-    m1 = Math.ceil(m / 2 != 0)
-  }
+<script id="ch0105/09" type="x">
+  var m = Number(prompt("输入m") )
+  var n = Number(prompt("输入n") )
+  var sum = 0;
+    for (var i = m; i < n + 1; i++) {
+      if ( i % 2 != 0) {
+        sum += i
+      }
+    }
+    console.log(sum)
 
 </script>
+
+<script id="ch0105/10" type="x">
+  var m = Number(prompt(''))
+  var n = Number(prompt(''))
+  var sum = 0
+    for (var i = m;i < n + 1;i++) {
+      if (i % 17 == 0) {
+        sum += i
+      }
+    }
+    console.log(sum)
+
+</script>
+
+<script id="ch0105/11" type="x">
+  var k = Number(prompt("输入k"))
+    var count_1 = 0;
+    var count_5 = 0;
+    var count_10 = 0;
+    for (var i = 1; i < k + 1; i++) {
+      var num = Number(prompt("输入整数" + i))
+      if (num == 1) {
+        count_1 += 1
+      }
+      if (num == 5) {
+        count_5 += 1
+      }
+      if (num == 10) {
+        count_10 += 1
+      }
+    }
+    console.log(count_1)
+    console.log(count_5)
+    console.log(count_10)
+</script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
