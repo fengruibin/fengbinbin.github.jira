@@ -291,12 +291,36 @@
 
 <script id="ch0104/09" type="xxx">
     var n = Number(prompt('请输入n'))
-    if (n % 3 == 0 && n % 5 == 0 && n % 7 == 0)  {
-      console.log("YES");
-    } else {
-      console.log("NO");
-    }
+    if (n % 3 == 0 && n % 5 == 0 && n % 7 == 0) {
+            console.log('3 5 7')
+        } else if (n % 3 == 0 && n % 5 == 0 && n % 7 != 0) {
+            console.log('3 5')
+        } else if (n % 3 != 0 && n % 5 == 0 && n % 7 == 0) {
+            console.log('5 7')
+        } else if (n % 3 == 0 && n % 5 != 0 && n % 7 == 0) {
+            console.log('3 7')
+        } else if (n % 3 == 0 && n % 5 != 0 && n % 7 != 0) {
+            console.log('3')
+        } else if (n % 3 != 0 && n % 5 == 0 && n % 7 != 0) {
+            console.log('5')
+        } else if (n % 3 != 0 && n % 5 != 0 && n % 7 == 0) {
+            console.log('7')
+        } else if (n % 3 != 0 && n % 5 != 0 && n % 7 != 0) {
+            console.log('n')
+        }
 
+</script>
+
+<script id="ch0104/10" type="x">
+  var a = Number(prompt('输入a'))
+  var b = Number(prompt('输入b'))
+  if (a < 60 && b > 60) {
+    console.log('1')
+  } else if (a > 60 && b < 60) {
+    console.log('1')
+  } else {
+    console.log('0')
+  }
 </script>
 
 <script id="ch0104/11" type="x">
@@ -339,22 +363,25 @@
 </script>
 
 <script id="ch0104/14" type="x">
+  debugger
   var W = Number(prompt(''))
-  var C = Number(prompt(''))
-          if (W <= 1000 && C == 'y') {
-            console.log(13)
-          } else {
-            if (W <= 1000 && C == 'n') {
-              console.log(8 )
-            } else {
-              if (W > 1000) {
-                console.log(13 + Math.ceil((W - 1000) / 500) * 4)
-              } else {
-                  console.log(8 + Math.ceil(W - 1000) / 500) * 4)
-                } 
-              }
-            }          
- </script>
+  var C = prompt('')
+  if (W > 1000 && C == 'y') {
+    console.log(8 + 5 + Math.ceil((W - 1000) / 500) * 4)
+  } else {
+    if (W <= 1000 && C == 'y') {
+      console.log(8 + 5)
+    } else {
+      if (W <= 1000 && C == 'n') {
+        console.log(8)
+      } else {
+        console.log(8 + Math.ceil((W - 1000) / 500) * 4)
+      }
+    }
+
+  }
+   
+</script>
 
 <script id="ch0104/15" type="x">
             var a = Number(prompt(''))
@@ -447,5 +474,4 @@
               } else {
                 console.log("0")
               }
-
-            </script>
+</script>
