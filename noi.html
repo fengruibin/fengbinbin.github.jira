@@ -441,7 +441,7 @@
               }
             </script>
 
-<script id="ch0104/20">
+<script id="ch0104/20" type="x">
   var a = Number(prompt(''))
   var b = Number(prompt(''))
   var c = Number(prompt(''))
@@ -476,17 +476,18 @@
               }
 </script>
 
-<script id="ch0105/01" type="x">
+<script id="ch0105/01">
   var n = Number(prompt('班级人数n'))
   var age = 0
   var allAge = 0
+
   var count = 0
   while (count < n) {
-    age = age + (+prompt('请输入年龄')
+    age = Number(prompt('请输入年龄'))
     allAge = allAge + age
     count = count + 1
   }
-
+  
   var r = allAge / n
   console.log(r.toFixed(2))
 
