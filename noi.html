@@ -476,7 +476,7 @@
               }
 </script>
 
-<script id="ch0105/01">
+<script id="ch0105/01" type="x">
   var n = Number(prompt('班级人数n'))
   var age = 0
   var allAge = 0
@@ -493,40 +493,138 @@
 
 </script>
 
-<script id="ch0105/02">
+<script id="ch0105/02" type="x">
   var money = 0
   var total = 0
+  var count = 0
+  while (count < 12) {
+    money = Number(prompt('请输入钱数'))
+    total = total + money
+    count = count + 1
+  }
 
+  var r = total / 12
+  console.log('$' + r.toFixed(2))
 </script>
 
 <script id="ch0105/03" type="x">
   var n = Number(prompt(''))
-  var number = 0
-  var allAge = 0
+  var total = 0
   var count = 0
   while (count < n) {
-    age = age + (+prompt('请输入年龄')
-    allAge = allAge + age
+    x = Number(prompt('请输入样本数据'))
+    total = total + x
     count = count + 1
   }
 
-  var r = allAge / n
-  console.log(r.toFixed(2))
+  var r = total / n
+  console.log(r.toFixed(4))
+
 </script>
 
 <script id="ch0105/04" type="x">
   var n = Number(prompt(''))
-  let n2 = 344
-  let n3 = 222
-  let n4 = 343
-  let n5 = 222
-  while (1 <= n && n <= 10000) {
-    x = n + n2 + n3 + n4 + n5
-    x2 = x / (n + 1)
+  var count = 0
+  var total = 0
+  while (count < n) {
+    x = Number(prompt('请输入数'))
+    total = total + x
+    count = count + 1
   }
-  console.log(x x2.toFixed(5))
+  
+  var r = total
+  var r2 = total / n
+  console.log(r + ' ' +  r2.toFixed(5))
 </script>
 
-<script id="ch0105/05">
+<script id="ch0105/05" type="x"> 
+  var n = Number(prompt(''))
+  var x
+  var max = 0
+  var count = 0
+  while (count < n) {
+    x = Number(prompt('请输入成绩'))
+
+    if (x > max) {
+      max = x
+  }
+
+  count = count + 1
+}
+
+console.log(max)
+</script>
+
+<script id="ch0105/06" type="x">
+  var n = Number(prompt(''))
+  var count = 0
+  var n2
+  var max = -Infinity
+  var min = Infinity
+  while (count < n) {
+    n2 = Number(prompt('请输入数'))
+    
+    if (n2 > max) {
+      max = n2
+    }
+
+    if (n2 < min) {
+      min = n2
+    }
+
+    count = count + 1
+  }
+
+  console.log(max - min)
+</script>
+
+<script id="ch0105/07" type="x">
+var n = Number(prompt(''))
+var count = 0
+var J = 0
+var Y = 0
+var T = 0
+var totalJ = 0
+var totalY = 0
+var totalT = 0
+while (count < n) {
+  J = Number(prompt('请输入金牌数'))
+  Y = Number(prompt('请输入银牌数'))
+  T = Number(prompt('请输入铜牌数'))
+  totalJ = totalJ + J
+  totalY = totalY + Y
+  totalT = totalT + T
+  count = count +1
+}
+
+console.log(totalJ)
+console.log(totalY)
+console.log(totalT)
+console.log(totalJ + totalY + totalT)
+</script>
+
+<script id="ch0105/08" type="x">
+  var n = Number(prompt(''))
+  var count = 0
+  var x
+  var total = 0
+  while (count < n - 1) {
+    x = Number(prompt('请输入度数'))
+    total = total + x
+    count = count + 1
+  }
+  x3 = 180 - total 
+  console.log(x3)
+
+</script>
+
+<script id="ch0105/0">
+  var m = Number(prompt(''))
+  var n = Number(prompt(''))
+  var m1
+  var m2
+  if (m >= 0 && m <= n && m <= 300){
+    m1 = Math.ceil(m / 2 != 0)
+  }
 
 </script>
