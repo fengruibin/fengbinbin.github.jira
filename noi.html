@@ -631,9 +631,9 @@ console.log(totalJ + totalY + totalT)
   var m = Number(prompt("输入m") )
   var n = Number(prompt("输入n") )
   var sum = 0;
-    for (var i = m; i < n + 1; i++) {
-      if ( i % 2 != 0) {
-        sum += i
+    for (var c = m; c <= n; c++) {
+      if (c % 2 == 1) {
+        sum += c //将c累加到sum变量上
       }
     }
     console.log(sum)
@@ -644,7 +644,7 @@ console.log(totalJ + totalY + totalT)
   var m = Number(prompt(''))
   var n = Number(prompt(''))
   var sum = 0
-    for (var i = m;i < n + 1;i++) {
+    for (var i = m;i <= n;i++) {
       if (i % 17 == 0) {
         sum += i
       }
@@ -674,6 +674,51 @@ console.log(totalJ + totalY + totalT)
     console.log(count_5)
     console.log(count_10)
 </script>
+
+<script id="ch0105/12" type="xxx">
+debugger
+  var N = Number(prompt())
+  var m = Number(prompt())
+  var count = 0
+  
+  for (var i = 1; i < N; i++) {
+    var num = Number(prompt("请输入整数" + i))
+    if （ num == m ) {
+      count ++
+    }
+  }
+  console.log(count)
+</script>
+
+<script id="ch0105/13" type="x">
+  var a = Number(prompt())
+  var n = Number(prompt())
+  var rst = 1
+  for (var i = 1; i < n + 1; i++) {
+    rst *= a
+  }
+  console.log(rst)
+</script>
+
+<script id="ch0105/14" type="x">
+  var x = Number(prompt())
+  var n = Number(prompt())
+  for (var i = 1; i < n + 1; i++) {
+    x *=(1 + 0.001)
+  }
+  console.log(x.toFixed(4))
+</script>
+
+<script id="ch0105/15">
+  var R = Number(prompt())
+  var M = Number(prompt())
+  var Y = Number(prompt())
+  for (var i = 1; i < Y + 1; i++) {
+    M *= (R / 100) + R
+  }
+</script>
+
+
 
 
 </head>
