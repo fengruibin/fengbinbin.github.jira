@@ -724,46 +724,63 @@ debugger
   console.log(Math.floor(M))//向下取整
 </script>
 
-<script id="ch0105/16" type='x'>
-debugger
-  var N = Number(prompt())//输入年薪
-  var K = Number(prompt())//输入每年增长
-  var sum = 0//手上现金
-  var price = 200//初始房价
-  var buyed = false//没买
-  for (var i = 0; i < 20; i++) {
-    sum += 50
+<script id="ch0105/16" type="xxxx">
+  var N = Number(prompt())//输入年薪N
+  var K = Number(prompt())//输入利率
+  var price = 200//初始房价200
+  var sum = 1
+  while (N < price) {
+    N += 50
     price *= (1 + K / 100)
-    if (sum >= price) {
-      buyed = true
-      console.log(i + 1)
-      break
-    }
-    
+    sum ++
   } 
-  if (!buyed) {
-    console.log('Impossible')
-</script>
-
-<script id="ch0105/17" type="x">
-  var k = Number(prompt())
-
-</script>
-
-<script id="ch0105/18" type="x">
-  var n = Number(prompt())
-  var a = Number(prompt())
-  var b = Number(prompt())
-  var rate = b / a * 100 
-  for (var i = 1; i < n; i++) {
-    var c = Number(prompt())
-    var d = Number(prompt())
-    var sampleRate = d / c * 100
-    if (sampleRate - rate > 5) {
-      console.log('better')
-    }
+  if (sum <= 20) {
+    console.log(sum)
+  } else {
+    console.log("Impossible")
   }
+</script>
 
+<script id="ch0105/17">
+  var k = Number(prompt())//输入k
+  var a = 0
+    var b = 0
+    var num = 0
+    var count = 0
+    while (count < k) {
+      if (count < 2) {
+        a = 1
+        b = 1
+        num = 1
+      } else {
+        num = a + b
+        a = b
+        b = num
+      }
+      count++
+    }
+    console.log(num)
+</script>
+
+<script id="ch0105/18">
+  var n = Number(prompt())//输入数据n组
+  for (var i = 0; i < n; i++) {
+    var a = Number(prompt())//输入临床实验的总病例数
+    var b = Number(prompt())//输入疗效有效的病例数
+    if (i ==0) {
+      x = b / a
+    } else {
+      y = b / a
+      if (y -x > 0.05) {
+        console.log("better")
+      } else if (x - y > 0.05) {
+        console.log("worse")
+      } else {
+        console.log("same")
+      }
+   }
+  }
+  
 </script>
 
 <script id="ch0105/19" type="x">
