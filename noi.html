@@ -803,18 +803,16 @@ debugger
 </script>
 
 <script id="ch0105/20" type="x">
-  var initialHeight = Number(prompt())
-  var height = initialHeight
-  var total = 0//总共走过的长度
+  var h = Number(prompt())
+  var sum = h
+  var s
+  for (i = 1; i <= 9; i++) {
 
-  for ( var i = 1; i <= 10; i++) {
-    //循环体代表球第i次落地时刻
-    total += height * 2//下次落地之前将会经过的距离
-    height = height / 2//落地后将能弹起的高度
+    sum = sum + h / (2 ** (i - 1))
+    s = h / (2 ** i)
   }
-  total -= initialHeight
-
-  console.log(total.toFixed, height.toFixed)
+  console.log(sum.toFixed(4))
+  console.log((s / 2).toFixed(7))
 
 </script>
 
@@ -904,23 +902,16 @@ debugger
 </script>
 
 <script id="ch0105/25" type="x">
-  var min = 49
-    var a = 0
-    var b = 0
-    var c = 0
-    var n = 0
-    while (min != n) {
-      a = Math.trunc(min / 49)
-      c = min % 7
-      b = (min % 49 - c) / 7
-      n = c * 81 + b * 9 + a
-      if (min == n && a <= 6 && b <= 6 && c <= 6) {
-        console.log(min)
-        console.log(String(a) + String(b) + String(c))
-        console.log(String(c) + String(b) + String(a))
-      }
-      min ++
-    }
+  var n = Number(prompt())
+  var str = ''
+
+  do {
+    var digit = n % 7
+    str = digit + str
+    n = (n - digit) / 7
+  } while (n > 0)
+
+  console.log(str)
 </script>
 
 <script id="ch0105/26" type="x">
