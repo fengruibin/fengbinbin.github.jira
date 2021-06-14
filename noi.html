@@ -940,19 +940,23 @@ debugger
 <script id="ch0105/27" type="xxx">
 debugger
   var k = Number(prompt())//输入整数
-  var An
-  var Sn
-  while (var i = 0;; i++) {
-
+  var n = 1
+  var Sn = 1
+  while (k >= Sn) {
+    n++
+    Sn += 1 / n
   }
+  console.log(n)
+
 </script>
 
 <script id="ch0105/28" type="xxx">
-  var num = Number(prompt())//输入数字
-  while (num >= 1 && num <= 100000000) {
-    var a = 
+  var n = Number(prompt())
+  var num = (n + "").length
+  for (var i = 0; i < num; i++) {
+    console.log(n % 10)
+    n = Math.floor(n / 10)
   }
-
 </script>
 
 <script id="ch0105/29">
