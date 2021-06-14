@@ -762,7 +762,7 @@ debugger
     console.log(num)
 </script>
 
-<script id="ch0105/18">
+<script id="ch0105/18" type="x">
   var n = Number(prompt())//输入数据n组
   for (var i = 0; i < n; i++) {
     var a = Number(prompt())//输入临床实验的总病例数
@@ -784,15 +784,21 @@ debugger
 </script>
 
 <script id="ch0105/19" type="x">
-  var roofNumber = Number(prompt())
-
-  for (var i = 0; i < roofNumber; i++) {
-    var x = Number(prompt())
-    var y = Number(prompt())
-    var personCount = Number(prompt())
-    sum = Math.sqrt(x * x + y * y)
+  var n = Number(prompt())//输入屋顶数n
+  var l
+  var s1
+  var s2
+  var t1 = 50//救生船速度50m/min
+  var t2 = 1.5//人速度1.5min
+  for (var i = 0; i < n; i++) {
+    var x = Number(prompt())//输入屋顶坐标
+    var y = Number(prompt())//输入屋顶坐标
+    var z = Number(prompt())//输入人数
+    l = Math.sqrt(x * x + y * y)
+    s1 = l * 2 / t1
+    s2 = z * t2
+    console.log(Math.ceil(s1 + s2))
   }
-
 
 </script>
 
@@ -803,8 +809,8 @@ debugger
 
   for ( var i = 1; i <= 10; i++) {
     //循环体代表球第i次落地时刻
-    height = height / 2//落地后将能弹起的高度
     total += height * 2//下次落地之前将会经过的距离
+    height = height / 2//落地后将能弹起的高度
   }
   total -= initialHeight
 
@@ -815,9 +821,9 @@ debugger
 <script id="ch0105/21" type="x">
   var num = Number(prompt())
 
-  while (num !== 1) {
+  while (num !== 1) { 
     if (num % 2 == 1){
-      console.log(num + '3+1=' + (num * 3 + 1))
+      console.log(num + '*3+1=' + (num * 3 + 1))
       num = (num * 3 +1)
     } else {
       console.log(num + '/2=' + (num / 2))
@@ -828,41 +834,74 @@ debugger
 </script>
 
 <script id="ch0105/22" type="x">
-
+  var hand = 0//手上的钱
+  var stock = 0//已经存的钱
+  var ok = true
+  for （var i = 1; i <= 12; i++)   {
+    hand += 300
+    var budget = Number(prompt())
+    if (hand < budget) {
+      console.log(-i)
+      ok = false
+      break
+    }
+    hand = hand - budget
+    if (left >= 100) {
+      stock += head - hand % 100
+      hand = hand % 100
+      }
+  }
+  if (!ok) {
+    console.log(stock * 1.2)
+  }
 </script>
 
-<script id="ch0105/23">
-debugger
+<script id="ch0105/23" type="x">
   var m = Number(prompt())//输入药品总量
   var p = Number(prompt())//输入取药人数
   var n
-  var total 
+  var count = 0//取不上药的人数
   
   for (var i = 0; i < p; i++) {
     var n = Number(prompt())//输入取走数量
     total = total + n
-    if (total <= m) {
-      console.log(total)
+    if (n <= m) {
+      m -= n
+    } else {
+      count++
     }
   } 
-    
-  
-  
-  /*for (var i = 0; i < p; i++) {
-    var n = Number(prompt())//输入取走数量
-    total = total + n
-    
-    console.log(total)
-  }*/
-
+  console.log(count)
 </script>
 
-<script id="ch0105">
-
+<script id="ch0105/24" type="x">
+  var n = Number(prompt())
+  var xmax = 0
+  var x = 0
+  for (var i = 0; i < n; i++) {
+    var high = Number(prompt())
+    var low = Number(prompt())
+    if (high >= 90 && high <= 140 && low >= 60 && low <= 90) {
+      x++
+      if(x > xmax){
+        xmax = x
+      }
+    } else {
+      x = 0
+    }
+  }
+  console.log(xmax)
 </script>
 
-<script id="ch0105">
-
+<script id="ch0105/25" type="x">
+  var n = Number(prompt())
+  var str = 
+  do {
+    var digit = n % 7//得出除法的余数
+    str = str + digit//利用自动类型转换拼接出对应进制
+    n = (n - digit) / 7
+  } while (n > 0)
+  console.log(str)
 </script>
 
 <script id="ch0105/26" type="x">
@@ -888,7 +927,7 @@ debugger
 
 </script>
 
-<script id="ch0105/27" type="x">
+<script id="ch0105/27" type="xxx">
 debugger
   var k = Number(prompt())//输入整数
   var An
