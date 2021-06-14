@@ -814,7 +814,7 @@ debugger
   }
   total -= initialHeight
 
-  console.log(total, height)
+  console.log(total.toFixed, height.toFixed)
 
 </script>
 
@@ -834,41 +834,51 @@ debugger
 </script>
 
 <script id="ch0105/22" type="x">
-  var hand = 0//手上的钱
-  var stock = 0//已经存的钱
-  var ok = true
-  for （var i = 1; i <= 12; i++)   {
-    hand += 300
-    var budget = Number(prompt())
-    if (hand < budget) {
-      console.log(-i)
-      ok = false
-      break
-    }
-    hand = hand - budget
-    if (left >= 100) {
-      stock += head - hand % 100
-      hand = hand % 100
+  var m = 0
+    var surplus = 0
+    var sum = 0
+    var mom_m = 0
+    var month = 0
+    var month_c = 0
+    var hundred = 0
+    var print_month = 0
+    for (var c = 0; c < 12; c ++) {
+      var n = Number( prompt("输入预算" + (c + 1)) )
+      m = 300
+      surplus += (m - n)
+      if (surplus >= 100) {
+         hundred = Math.floor(surplus / 100)
+         hundred *= 100 
+         surplus -= hundred
+         mom_m += hundred
+      } else if (surplus < 0) {
+          month = -(c + 1)
+          month_c += 1
+          if (month_c == 1) {
+            print_month = month
+          }
       }
-  }
-  if (!ok) {
-    console.log(stock * 1.2)
-  }
+    }
+    sum = surplus + mom_m * 1.2
+    if (month_c == 0) {
+      console.log(sum)
+    } else {
+      console.log(print_month)
+    }
 </script>
 
 <script id="ch0105/23" type="x">
   var m = Number(prompt())//输入药品总量
   var p = Number(prompt())//输入取药人数
-  var n
   var count = 0//取不上药的人数
   
   for (var i = 0; i < p; i++) {
-    var n = Number(prompt())//输入取走数量
-    total = total + n
-    if (n <= m) {
-      m -= n
+    var need = Number(prompt())//输入取走数量
+    
+    if (m < need) {
+      count += 1
     } else {
-      count++
+      m -= need 
     }
   } 
   console.log(count)
@@ -894,14 +904,23 @@ debugger
 </script>
 
 <script id="ch0105/25" type="x">
-  var n = Number(prompt())
-  var str = 
-  do {
-    var digit = n % 7//得出除法的余数
-    str = str + digit//利用自动类型转换拼接出对应进制
-    n = (n - digit) / 7
-  } while (n > 0)
-  console.log(str)
+  var min = 49
+    var a = 0
+    var b = 0
+    var c = 0
+    var n = 0
+    while (min != n) {
+      a = Math.trunc(min / 49)
+      c = min % 7
+      b = (min % 49 - c) / 7
+      n = c * 81 + b * 9 + a
+      if (min == n && a <= 6 && b <= 6 && c <= 6) {
+        console.log(min)
+        console.log(String(a) + String(b) + String(c))
+        console.log(String(c) + String(b) + String(a))
+      }
+      min ++
+    }
 </script>
 
 <script id="ch0105/26" type="x">
@@ -932,16 +951,21 @@ debugger
   var k = Number(prompt())//输入整数
   var An
   var Sn
-  if (k >= 1 && k <= 15) {
-    for (var n = 1;;n++) {
-      An =1 / n
-      Sn +=An
-      if (Sn > k) {
-        break
-      }
-    } 
-    console.log(n,Sn)
+  while (var i = 0;; i++) {
+
   }
+</script>
+
+<script id="ch0105/28" type="xxx">
+  var num = Number(prompt())//输入数字
+  while (num >= 1 && num <= 100000000) {
+    var a = 
+  }
+
+</script>
+
+<script id="ch0105/29">
+
 </script>
 
 
