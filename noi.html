@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
   <!-- js第二天作业 -->
 </head>
 
@@ -902,26 +903,33 @@ debugger
 </script>
 
 <script id="ch0105/25" type="x">
-  var n = Number(prompt())
-  var str = ''
+             //81是9进制最小三位数，如果比81更小，9进制就少
+             //342是7进制最大三位数，如果
+  for (var x = 49; x <= 728; x++) {
+    var a7 = x % 7
+    var b7 = (x - a7) / 7 % 7
+    var c7 = (x - a7 - b7 * 7) / 49 % 7
 
-  do {
-    var digit = n % 7
-    str = digit + str
-    n = (n - digit) / 7
-  } while (n > 0)
+    var a9 = x % 9
+    var b9 = (x - a9) / 9 % 9
+    var c9 = (x - a9 - b9 * 9) / 81 % 9
 
-  console.log(str)
+    if (a7 = c9 && b7 == b9 && c7 == a9) {
+      console.log(x)
+      console.log('' + c7 + b7 + a7)
+      console.log(''+ c9 + b9 + a9)
+    }
+  }
 </script>
 
-<script id="ch0105/26" type="x">
+<script id="ch0105/26">
   var n = Number(prompt())//输入n个四位数
   var x
   var xqian
   var xbai
   var xshi
   var xge
-  var total = 0
+  var total = 0//记录满足条件的数的数量
   for (var i = 0; i < n; i++) {
     var x = Number(prompt())//输入四位数字   
     xqian = Math.floor(x / 1000)
@@ -934,35 +942,323 @@ debugger
       }  
     } 
     console.log(total)
+    /*
+    var a = x % 10//个位数
+    var b = (num - a) / 10 % 10//十
+    var c = (num - a - b * 10) / 100 % 10//百
+    var d = (num - a - b * 10 - c * 100) / 1000 % 10//千
+    */
 
 </script>
 
 <script id="ch0105/27" type="xxx">
 debugger
   var k = Number(prompt())//输入整数
-  var n = 1
-  var Sn = 1
-  while (k >= Sn) {
-    n++
-    Sn += 1 / n
+  var Sn = 0
+  for (var i = 1; ; i++) {
+    Sn += 1 / i 
+    if (Sn > k) {
+    break
+    }
   }
-  console.log(n)
+  console.log(i)
 
 </script>
 
 <script id="ch0105/28" type="xxx">
   var n = Number(prompt())
-  var num = (n + "").length
-  for (var i = 0; i < num; i++) {
-    console.log(n % 10)
-    n = Math.floor(n / 10)
+  do {
+    var digit = n % 10
+    console.log(digit)
+    n = (n - digit) / 10
+  } while (n > 0)
+</script>
+
+<script id="ch0105/29" type="x">
+  var n = Number(prompt())
+  var sign = 1
+  if (n < 0) {
+    sign = -1
+    n = -n
+  }
+  var str = ''
+  do {
+    var digit = n % 10
+    str = str + digit
+    n = (n - digit) / 10
+  } while (n >0)
+  if (sign == -1) {
+    console.log('-' + str)
+  } else {
+    console.log(str)
+  }
+
+</script>
+
+<script id="ch0105/30" type="x">
+  var m = Number(prompt())
+  var k = Number(prompt())
+  if (m % 19 == 0) {
+    var count = 0
+    do {
+      var digit = m % 10
+      if (digit == 3) {
+        count++
+      }
+      m = (m - digit) / 10
+    } while (m)
+    if (count == k) {
+      console.log("YES")
+    } else {
+      console.log("NO")
+    }
+  } 
+
+
+</script>
+
+<script id="ch0105/30">
+
+</script>
+
+<script id="ch0105/31" type="x">
+  var n = Number(prompt())
+  var m = Number(prompt())
+
+  for (var light = 1; light <= n; light++) {
+    var stste = true
+
+    for (var man = 1; man <= m; man++) {
+      if (light % man == 0) {
+        state = !state
+
+      }
+
+    }
+    if (state == false) {
+      if (z)
+    console.log(light)
+    }
+  }
+
+</script>
+
+<script id="ch0105/32" type="x">
+  var n = Number(prompt())
+  var sum = 0
+  var a = 1
+  var b = 2
+
+  for (var i = 0; i < n; i++) {
+    sum += b / a
+    c = a + b
+    a = b
+    b = c
+  }
+
+  console.log(sum)
+
+</script>
+
+<script id="ch0105/33" type="x">
+  var n = Number(prompt())
+
+  for (var i = 1; i < n; i++) {
+    sum += 1 / i * sign
+    sign = sign * -1
+  }
+  console.log(sum)
+</script>
+
+<script id="ch0105/34" type="x">
+  var n = Number(prompt())
+  var sum = 0
+
+  for (var i = 1; i <= n; i++) {
+    var fact = 1
+    for (var j = 1; j <=i; j++) {
+      fact *= j
+    }
+    sum += fact
+  }
+  console.log(sum)
+</script>
+
+<script id="ch0105/35" type="x">
+  var n = Number(prompt())
+  var sum = 0
+  var fact = 1
+
+  for (var i = 1; i <= n + 1; i++) {
+    sum += 1 / fact
+    fact *= i
+  }
+  console.log(sum.toFixed(10))
+
+</script>
+
+<script id="ch0105/36" type="x">
+  var x = Number(prompt())
+  var n = Number(prompt())
+  var product = 1
+  var sun = 0
+  for (var i = 0; i <= n; i++) {
+    sum += product
+    product *= x 
+  }
+  console.log(sum)
+
+</script>
+
+<script id="ch0105/37">
+
+</script>
+
+<script id="ch0105/38" type="x">
+  var k = Number(prompt())
+
+  for (var c = 0; c < k; c++) {
+
+    var n = Number(prompt())
+    if (n == 0) {
+    } else {
+      for (var i = n; i >= 0; i--) {
+        var factor = Number(prompt())
+        if (i > 0) {
+          console.log(factor * i)
+        }
+      } 
+    }
   }
 </script>
 
-<script id="ch0105/29">
+<script id="ch0105/39">
+  var n = Number(prompt())
+  var sum = 0
+  for (var i = 1; 1 <= n; i++) {
+    if (i % 7 == 0) {
+      continue
+    } else {
+      var x = i
+      var 与7有关 = false
+      do {
+        var digit = x % 10
+        if (digit == 7) {
+          与7有关 = true
+          break
+        }
+        x = (x - digit) / 10
+      } while (x)
+      if (!与7有关) {
+        sum += i * i
+      }
+    }
+  }
 
 </script>
 
+<script id="ch0105/40">
+  var n = Number(prompt())
+  var count = 0
+  for (var i = 1; i <= n; i++) {
+    var x = i
+    do {
+      var digit = x % 10
+      if (digit == 1) {
+        count++
+      }
+      x = (x - digit) / 10
+    } while(x)
+  }
+  console.log(count)
+</script>
+
+<script id="ch0105/41">
+  var n = Number(prompt())
+    var count = 0
+    for (var i = 1; i <= n; i++) {
+      var x = i
+      do {
+        var digit = x % 10
+        if (digit == 1) {
+          count++
+        }
+        x = (x - digit) / 10
+      } while (x)
+    }
+    console.log(count)
+
+</script>
+
+<script id="ch0105/42">
+  var w = Number(prompt())
+  var h = Number(prompt())
+  var char = prompt()
+  var fill = Number(prompt())
+
+  var line = ''
+  for (var i = 0; i < w; i++) {
+    line += char
+  }
+  var midline = char
+  for (var i = 1; i < w - 1; i++) {
+    midline += midchar
+  }
+  midline += char
+  console.log
+ 
+</script>
+
+<script id="ch0105/43">
+  var p = Number(prompt())
+  for (var i = 2;  ; i++) {
+    if (p % i ==0) {
+      console.log(p / i)
+      break
+    }
+  }
+
+</script>
+
+<script id="ch0105/44">
+  var n = Number(prompt())
+  var count = 0
+  for (var i = 2; ; i++) {
+    var isPrime = true
+    var sqrt_i = Math.sqrt(i)
+
+    for (var j = 2; j <= sqrt_i; j++) {
+      if (i % J == 0) {
+        isPrime = false
+        break
+    }
+  }
+  if (isPrime) {
+    count++
+  }
+  if (count == n) {
+     console.log(i)
+     break
+  }
+}
+</script>
+
+<script id="ch0105/45">
+  var n = Number(prompt())
+  var sum = 0
+  var coin = 1
+  var day = 0
+  for (var i = 1; i <= n; i++) {
+    sum += coin
+    day++ 
+    if (day == coin) {
+      coin++
+      day = 0
+    }
+  }
+  console.log(sum)
+
+</script>
 
 
 </body>
