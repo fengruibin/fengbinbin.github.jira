@@ -11,6 +11,223 @@
 </head>
 
 <body>
+
+<script id="narcissistic">
+  //输入一个数，判断是否是水仙花数(指一个 3 位数，它的每个位上的数字的3次幂之和等于它本身)
+  function digitWidth(n) {
+    var count = 0
+    do {
+      var digit = n % 10
+      count++
+      n = (n - digit) / 10
+    } while(n)
+    return count
+  }
+
+  function power(a,x)
+  function isNarcissistic(n) {
+
+  }
+  var width = digitWidth
+  for (var i = 1; i < num; i++) {
+    a = num % 10//个位数字
+    b = (num - a) / 10 % 10//十位数字
+    c = (num - b * 10 - a) / 100//百位数字
+  } 
+  console.log(a,b,c)
+  if (a ** 3 + b ** 3 + c ** 3 == num) {
+    console.log('YES')
+  } else {
+    console.log('NO')
+  }
+
+  /*function digitWidth(n) {
+      var count = 0
+      do {
+        var digit = n % 10
+        count++
+        n = (n - digit) / 10
+      } while (n)
+      return count
+    }
+
+    function power(a, x) {
+      var r = 1
+      for (var i = 0; i < x; i++) {
+        r *= a
+      }
+      return r
+    }
+
+    function isNarcissistic(n) {
+      var m = n
+      var width = 0
+      do {
+        var digit = n % 10
+        width++
+        n = (n - digit) / 10
+      } while (n)
+      var sum = 0
+
+      while (n) {
+        var digit = n % 10
+        var r = 1
+        for (var i = 0; i < width; i++) {
+          r *= digit
+        }
+        sum += r
+        n = (n - digit) / 10
+      }
+
+      return sum == m
+    }
+
+    function isNarcissistic2(n) {
+      var m = n
+      var width = digitWidth(n)
+      var sum = 0
+
+      while (n) {
+        var digit = n % 10
+        sum += power(digit, width)
+        n = (n - digit) / 10
+      }
+
+      return sum == m
+    }*/
+</script>
+  
+<script id="narcissistics">
+  //输出10000以内的水仙花数
+  debugger
+  var num = 100
+  for (var i = 0; i < num; i++) {
+    if (num >= 100 && num < 10000) {
+      num += 1
+      a = num % 10//个位数字
+      b = (num - a) / 10 % 10//十位数字
+      c = (num - b * 10 - a) / 100//百位数字
+      if (a ** 3 + b ** 3 + c ** 3 == num) {
+        console.log(num)
+      } 
+    } 
+  }
+
+</script>
+  
+<script id="palindrom">
+  //判断一个数是否是回文数字
+
+
+</script>
+  
+<script id="weekday">
+  //输入年份与月份，输出这个月的第一天是周几
+
+</script>
+  
+<script id="complete-number">
+  //判断一个数是否是完全数
+  function isCompleteNumber(n) {
+    var sum = 0
+    for (var i = 1; i < n; i++) {
+      if (n % i == 0) {
+        sum += i
+      }
+    }
+    return sum == n
+  }
+
+  /*function isCompleteNumber(n) {
+      var sum = 1
+      var sqrt_n = Math.sqrt(n)
+
+      for (var i = 2; i <= sqrt_n; i++) {
+        if (n % i == 0) {
+          var cp = n / i
+          if (cp == i) {
+            sum += i
+          } else {
+            sum += i + cp
+          }
+        }
+      }
+
+      return sum == n
+    }*/
+</script>
+  
+<script id="complete-numbers">
+  //输出1000以内的完全数
+  for (var x = 1; x < 1000; x++) {
+    if (isCompleteNumber(x)) {
+      console.log(x)
+    }
+  }
+
+</script>
+  
+<script id="prime">
+  //判断一个数是否是素数
+  function isPrime(n) {
+    var sqrt_n = Math.aqrt(n)
+    for (var j = 2; j <= sqrt_n; j++) {
+      if (n % j == 0) {
+        isPrime = false
+      }
+    }
+    if (isPrime) {
+      count++
+    }
+    if (count == n) {
+      console.log(n)
+      break
+    }
+  } 
+
+
+</script>
+  
+<script id="primes">
+  //输出1000以内的素数
+
+</script>
+  
+<script id="lcf&lcm">
+  //输入两个数，输出它们的最大公约数和最小公倍数
+  function lcf(a, b) {
+      var c
+      while (a && b) {
+        c = a % b
+        a = b
+        b = c
+      }
+      return a || b
+    }
+
+    function lcf(a, b) {
+      while (a != b) {
+        if (b > a) {
+          let c = a
+          a = b
+          b = c
+        }
+        a = a - b
+      }
+      return a
+    }
+    function lcm(a, b) {
+      return a * b / lcf(a, b)
+    }
+
+</script>
+  
+<script id="sqrt">
+  //求一个数的平方根
+  
+
+</script>
+  
 <script id="ch0103/01" type="xxx">
   var a = Number(prompt('请输入a'))
   var b = Number(prompt('请输入b'))
@@ -1258,6 +1475,20 @@ debugger
   }
   console.log(sum)
 
+  if ( n % 19 == 0 && count3(n) == k) {
+  }
+  function count3(n)
+    do {
+      var digit = n % 10
+      if (digit ==3) {
+        count++
+      }
+      n = (n - digit) / 10
+    } while (n)
+
+
+  
+ 
 </script>
 
 
