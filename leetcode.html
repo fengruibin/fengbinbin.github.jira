@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+
+
+<script>
+  var isPowerOfThree = function (n) {
+   if (n <= 0) return false
+
+   while (n % 3 == 0) {
+     n = n / 3
+   }
+   return n == 1
+  }
+</script>
+
+<script>
+  var isPowerOfTwo = function (n) {
+    if (n <= 0) return false
+
+    while (n % 2 == 0) {
+      n = n / 2
+    }
+    return n == 1
+  }
+</script>
+
+<script>
+  var isUgly = function (n) {
+    if (n <= 0) return false
+
+    while (n % 2 == 0) {
+      n = n / 2
+    } 
+    while ( n % 3 == 0) {
+      n = n / 3 
+    }
+    while (n % 5 == 0) {
+      n = n / 5
+    }
+    return n == 1
+
+    }
+</script>
+
+<script>
+  var trailingZeroes = function (n) {
+      var fact = 1
+      for (var i = 2; i <= n; i++) {
+        fact *= i
+      }
+
+      var c = 0
+      // n = 78020874200000000000000000
+      while (fact) {
+        var digit = fact % 10
+        if (digit == 0) {
+          c++
+        } else {
+          break
+        }
+        fact = fact / 10
+      }
+
+      return c
+    };
+</script>
+
+<script>
+  var reverse = function (x) {
+      var sign = 1
+      if (x < 0) {
+        sign = -1
+        x = -x
+      }
+
+      var result = 0
+      while (x) {
+        var digit = x % 10
+        result = result * 10 + digit
+        x = (x - digit) / 10
+      }
+      if (result > 2147483647) {
+        return 0
+      }
+
+      return result * sign
+    }
+</script>
+
+<script>
+  var isHappy = function (n) {
+  }
+</script>
+
+<script>
+  var isPowerOfFour = function (n) {
+    if (n <= 0) return false
+    return(n & (n - 1)) == 0 && (n & 0b101010101010101010101010) == 0
+  }
+</script>
+
+<script>
+  var fib = function (n) {
+  }
+</script>
+
+<script>
+function f(x = 1, y = 1,history = '') {
+  if (x == 9 && y == 6) {
+    return true
+  }
+  if (x > 9 || y > 6) {
+    return false
+  }
+  return f(x + 1,y,history + '>') || f(x,y + 1,history + '^')
+}
+
+</script>
+
+<script id="66">
+  var plusOne = function (digits) {
+  const len = digits.length
+    for (var i = len - 1; i >= 0; i--) {
+      digits[i]++
+      digits[i] %= 10
+      if (digits[i] != 0)
+        return digits
+    }
+    digits = [...Array(len + 1)].map(_ => 0)
+    digits[0] = 1
+    return digits
+  }
+</script>
+
+<script id="26">
+  var removeDuplicates = function (nums) {
+    const n = nums.length
+    if (n === 0) {
+      return 0
+    }
+    let fast = 1, slow = 1
+    while (fast < n) {
+      if (nums[fast] !== nums[fast - 1]) {
+        nums[slow] = nums[fast]
+        ++slow
+      }
+      ++fast
+    }
+    return slow
+  }
+</script>
+
+<script id="485">
+  var findMaxConsecutiveOnes = function (nums) {
+    
+
+  }
+
+</script>
+
+<script id="283">
+  var moveZeroes = function (nums) {
+    const n = nums.length
+    for (var i = 0; i < n; i++) {
+
+    }
+  }
+
+</script>
+
+<script id="338">
+  var countBits = function (n) {
+
+  }
+
+</script>
+
+<script id="67">
+  var addBinary = function (a, b) {
+  }
+
+</script>
+
+<script>
+function f(startx,y) {
+  if (x == 9 && y == 6) {
+  }
+  return true
+}
+if (x > 9) {
+
+}
+</script>
+
+
+</head>
+
+
+</html>
