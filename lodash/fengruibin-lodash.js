@@ -10,4 +10,8 @@ var FengRuiBin = function () {
     }
     return result
   }
+
+  function compact(array) {
+    
+  }
 }
