@@ -1,4 +1,4 @@
-var FengRuiBin = function () {
+var fengruibin = function () {
 
   function chunk(array, size) {
     var result = []
