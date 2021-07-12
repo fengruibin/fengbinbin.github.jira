@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var FengRuiBin = function () {
+=======
+var fengruibin = function () {
+>>>>>>> 9e5656639fd6755605fa45bfb3289be14df3c491
 
   function chunk(array, size) {
     var result = []
@@ -10,8 +14,12 @@ var FengRuiBin = function () {
     }
     return result
   }
+<<<<<<< HEAD
 
   function compact(array) {
     
   }
 }
+=======
+}
+>>>>>>> 9e5656639fd6755605fa45bfb3289be14df3c491
