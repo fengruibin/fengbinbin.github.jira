@@ -1,11 +1,11 @@
 var FengRuiBin = function () {
 
   function chunk(array, size) {
-    let result = []
+    var result = []
     if (!array || size < 1) {
       return []
     }
-    for (let i = 0; i < array.length; i += size) {
+    for (var i = 0; i < array.length; i += size) {
       res.push(array.slice(i, i + size))
     }
     return result
