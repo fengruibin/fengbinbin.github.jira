@@ -15,7 +15,12 @@ var fengruibin = function () {
   function compact(array) {
     
   }
-}
+
+  return {
+    chunk: chunk,
+    compact: compact,
+  }
+}()
 
 
 
