@@ -1,12 +1,10 @@
 var fengruibin = function () {
 
-  function chunk(array, size) {
+  function chunk(array, size = 1) {
     var result = []
-    if (!array || size < 1) {
-      return []
-    }
-    for (var i = 0; i < array.length; i += size) {
-      res.push(array.slice(i, i + size))
+    if (!array || size < 1) return result
+    for (var i = 0; i < array.length; i+=size) {
+      result.push(array.slice(i, i + size))
     }
     return result
   }
@@ -17,8 +15,8 @@ var fengruibin = function () {
   }
 
   return {
-    chunk: chunk,
-    compact: compact,
+    chunk,
+    compact,
   }
 }()
 
