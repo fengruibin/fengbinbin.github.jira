@@ -1,6 +1,6 @@
 var fengruibin = function () {
 
-  function chunk(array, [size = 1]) {
+  function chunk(array, size) {
     let result = []
     if (!array || size < 1) return result
     for (let i = 0; i < array.length; i += size) {
@@ -12,7 +12,7 @@ var fengruibin = function () {
 
   function compact(array) {
     var result = []
-    for (var i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
       if (array[i]) {
         result.push(array[i])
       }
@@ -22,25 +22,34 @@ var fengruibin = function () {
 
 
   function concat(array, ...values) {
-    var result = []
-    if (!array && !values) return result
-    if (array) return array
-    if (values) {
+    let result = []
+    if (!array) {
       for (let i = 0; i < values.length; i++) {
         result.push(values[i])
       }
-      return j
     } else {
       for (let i = 0; i < values.length; i++) {
-        return array.push(values[i])
+        array.push(values[i])
       }
     }
+    return
   }
 
 
+  function difference(array, values) {
+    let result = []
+
+  }
+
+
+
+
+
+
   return {
-    chunk,
-    compact,
-    concat,
+    chunk: chunk,
+    compact: compact,
+    concat: concat,
+    difference: difference,
   }
 }()
