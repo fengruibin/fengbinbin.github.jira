@@ -24,15 +24,19 @@ var fengruibin = function () {
   function concat(array, ...values) {
     let result = []
     if (!array) {
-      for (let i = 0; i < values.length; i++) {
+      for (var i = 0; i < values.length; i++) {
         result.push(values[i])
       }
     } else {
-      for (let i = 0; i < values.length; i++) {
-        array.push(values[i])
+      for (var j = 0; j < array.length; j++) {
+        let newresult = result.push(array[j])
       }
+      for (var i = 0; i < values.length; i++) {
+        newresult.push(values[i])
+      }
+      return newresult
     }
-    return
+    return result
   }
 
 
