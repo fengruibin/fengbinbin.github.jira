@@ -42,7 +42,7 @@ var fengruibin = function () {
 
   function difference(array, values) {
     let res = []
-    let nres = concat(...values)
+    let nres = [].concat(...values)
     for (let i = 0; i < array.length; i++) {
       if (nres.indexOf(attay[i] === -1)) {
         res.push(array[i])
