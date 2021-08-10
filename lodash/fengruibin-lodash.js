@@ -1,3 +1,4 @@
+//Lodash
 var fengruibin = function () {
 
   function chunk(array, size) {
@@ -41,21 +42,47 @@ var fengruibin = function () {
 
   function difference(array, values) {
     let res = []
-    let newres = []
-    for (let i = 0; i < values.length; i++) {
-      newres.push(values[i]).flat(Infinity)
+    let nres = res.concat(...values)
+    for (let i = 0; i < array.length; i++) {
+      if (nres.indexOf(array[i]) === -1) {
+        res.push(array[i])
+      }
     }
+    return res
   }
 
 
+  function differenceBy(array, values, iteratee) {
+
+  }
 
 
+  function drop(array, n) {
+    let res = []
+    for (let i = n; i < array.length; i++) {
+      res.push(array[i])
+    }
+    return res4r
+  }
 
 
+  function dropRight(array, n) {
+    let res = []
+    for (let i = 0; i < array.length - n; i++) {
+      res.push(array[i])
+    }
+    return res
+  }
+
+
+  //调用函数
   return {
     chunk: chunk,
     compact: compact,
     concat: concat,
     difference: difference,
+    differenceBy: differenceBy,
+    drop: drop,
+    dropRight: dropRight,
   }
 }()
