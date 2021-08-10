@@ -42,9 +42,9 @@ var fengruibin = function () {
 
   function difference(array, values) {
     let res = []
-    let nres = values.flat(Infinity)
+    let nres = concat(...values)
     for (let i = 0; i < array.length; i++) {
-      if (!nres.includes(array[i])) {
+      if (nres.indexOf(attay[i] === -1)) {
         res.push(array[i])
       }
     }
@@ -57,7 +57,7 @@ var fengruibin = function () {
   }
 
 
-  function drop(array, n) {
+  function drop(array, n = 1) {
     let res = []
     for (let i = n; i < array.length; i++) {
       res.push(array[i])
@@ -66,7 +66,7 @@ var fengruibin = function () {
   }
 
 
-  function dropRight(array, n) {
+  function dropRight(array, n = 1) {
     let res = []
     if (n > array.length) return res
     for (let i = 0; i < array.length - n; i++) {
