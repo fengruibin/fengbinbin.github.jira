@@ -1,48 +1,50 @@
 var fengruibin = function () {
 
   function chunk(array, size) {
-    let result = []
+    let res = []
     if (!array || size < 1) return result
     for (let i = 0; i < array.length; i += size) {
-      result.push(array.slice(i, i + size))
+      res.push(array.slice(i, i + size))
     }
-    return result
+    return res
   }
 
 
   function compact(array) {
-    var result = []
+    var res = []
     for (let i = 0; i < array.length; i++) {
       if (array[i]) {
-        result.push(array[i])
+        res.push(array[i])
       }
     }
-    return result
+    return res
   }
 
 
   function concat(array, ...values) {
-    let result = []
-    if (!array) {
-      for (var i = 0; i < values.length; i++) {
-        result.push(values[i])
-      }
-    } else {
-      for (var j = 0; j < array.length; j++) {
-        let newresult = result.push(array[j])
-      }
-      for (var i = 0; i < values.length; i++) {
-        newresult.push(values[i])
-      }
-      return newresult
+    let res = []
+    for (let i = 0; i < array.length; i++) {
+      res.push(array[i])
     }
-    return result
+    for (let j = 0; j < values.length; j++) {
+      if (Array.isArray(values[j])) {
+        for (let k = 0; k < values[j].length; k++) {
+          res.push(values[j][k])
+        }
+      } else {
+        res.push(values[j])
+      }
+    }
+    return res
   }
 
 
   function difference(array, values) {
-    let result = []
-
+    let res = []
+    let newres = []
+    for (let i = 0; i < values.length; i++) {
+      newres.push(values[i]).flat(Infinity)
+    }
   }
 
 
