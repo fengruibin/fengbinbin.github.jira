@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9-grid</title>
+  <style>
+    /* table1 */
+    #table1 {
+      color: green;
+      position: fixed;
+      top: 50px;
+      left: 50%;
+      border-collapse: collapse;
+    }
+
+    #table1 th {
+      height: 50px;
+      width: 50px;
+    }
+
+    #table1 tr {
+      border: 5px solid blue;
+    }
+
+    #table1 col {
+      border: 5px solid blue;
+    }
+
+    #table1 th:hover {
+      border: 5px solid red;
+      cursor: pointer;
+    }
+
+    /* d3 */
+    #d3 {
+      position: fixed;
+      left: 50%;
+      top: 450px;
+    }
+
+    #d3 div {
+      margin: 0;
+      padding: 0;
+      height: 50px;
+      width: 50px;
+      line-height: 50px;
+      text-align: center;
+      border: 5px solid blue;
+      color: green;
+    }
+
+    .c1 {
+      position: relative;
+    }
+
+    .c2 {
+      position: relative;
+      left: 55px;
+      top: -60px;
+      border-color: blue;
+    }
+
+    .c3 {
+      position: relative;
+      left: 110px;
+      top: -120px;
+      border-color: blue;
+    }
+
+    .c4 {
+      position: relative;
+      top: -125px;
+      border-color: blue;
+    }
+
+    .c5 {
+      position: relative;
+      left: 55px;
+      top: -185px;
+      border-color: blue
+    }
+
+    .c6 {
+      position: relative;
+      left: 110px;
+      top: -245px;
+      border-color: blue
+    }
+
+    .c7 {
+      position: relative;
+      top: -250px;
+      border-color: blue;
+    }
+
+    .c8 {
+      position: relative;
+      left: 55px;
+      top: -310px;
+      border-color: blue
+    }
+
+    .c9 {
+      position: relative;
+      left: 110px;
+      top: -370px;
+      border-color: blue
+    }
+
+    #d3 div:hover {
+      border-color: red;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+
+    /* table2 */
+    #table2 {
+      color: green;
+      border-collapse: collapse;
+      position: fixed;
+      left: 50%;
+      top: 250px;
+    }
+
+    #table2 th {
+      height: 50px;
+      width: 50px;
+      border: 5px solid blue;
+      position: relative;
+    }
+
+    #table2 th:hover::before {
+      content: ' ';
+      cursor: pointer;
+      position: absolute;
+      border: 5px solid red;
+      top: -5px;
+      bottom: -5px;
+      left: -5px;
+      right: -5px;
+    }
+  </style>
+</head>
+
+<body>
+  <table id="table1">
+    <colgroup>
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+      </tr>
+      <tr>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+      </tr>
+      <tr>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+      </tr>
+    </thead>
+  </table>
+  <div id="d3">
+    <div class="c1">1</div>
+    <div class="c2">2</div>
+    <div class="c3">3</div>
+    <div class="c4">4</div>
+    <div class="c5">5</div>
+    <div class="c6">6</div>
+    <div class="c7">7</div>
+    <div class="c8">8</div>
+    <div class="c9">9</div>
+  </div>
+  <table id="table2">
+    <thead>
+      <tr>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+      </tr>
+      <tr>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+      </tr>
+      <tr>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+      </tr>
+    </thead>
+  </table>
+</body>
+
+</html>
