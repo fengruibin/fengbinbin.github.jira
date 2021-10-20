@@ -68,8 +68,8 @@ var fengruibin = function () {
     }
     return res
   }
-  //dropRightWhilte
-  function dropRightWhilte(array, predicate) {
+  //dropRightWhile
+  function dropRightWhile(array, predicate) {
     let result = []
   }
   //dropWhile
@@ -156,14 +156,13 @@ var fengruibin = function () {
     }
   }
   //indexOf
-  function indexOf(array, value, fromIndex) {
+  function indexOf(array, value, fromIndex = 0) {
     for (let i = fromIndex; i < array.length; i++) {
       if (array[i] === value) {
         return i
-      } else {
-        return -1
       }
     }
+    return -1
   }
   //initia
   function initial(array) {
@@ -175,17 +174,82 @@ var fengruibin = function () {
     return array.slice(0, array.length - 1)
   }
   //intersection
-  function intersection(arrays) {
+  function intersection(...arrays) {
     let result = []
-    for (let i = 0; i < arrays[0].length; i++) {
-      for (let j = 1; j < arrays.length; j++) {
-        if (arrays[0][i] == arrays[j][i]) {
-          result.push(arrays[0][i])
+    let array = arrays.shift()
+    for (let i = 0; i < array.length; i++) {
+      let item = array[i]
+      let flag = true
+      for (let j = 0; j < arrays.length; j++) {
+        if (!arrays[j].includes(item)) {
+          flag = false
         }
+      }
+      if (flag) {
+        result.push(item)
       }
     }
     return result
   }
+  //join
+  function join(array, separator) {
+    let str = ''
+    for (let i = 0; i < array.length - 1; i++) {
+      str += array[i].toString() + separator
+    }
+    str += array[array.length - 1]
+    return str
+  }
+  // last
+  function last(array) {
+    // for (let i = array.length - 1; i >= 0; i--) {
+    //   return array[i]
+    // }
+    return array[array.length - 1]
+  }
+  //lastIndexOf
+  function lastIndexOf(array, value, fromIndex = array.length - 1) {
+    for (let i = fromIndex; i >= 0; i++) {
+      if (array[i] === value) {
+        return i
+      }
+    }
+    return -1
+  }
+  //pull
+  function pull(array, ...values) {
+    for (let i = 0; i < array.length; i++) {
+      if (values.includes(array[i])) {
+        array.splice(i, 1)
+        i--
+      }
+    }
+    return array
+  }
+  //reverse
+  function reverse(array) {
+    let result = []
+    for (let i = array.length - 1; i >= 0; i--) {
+      result.push(array[i])
+    }
+    array = result
+    return array
+  }
+  //sortedIndex
+  function sortedIndex(array, value) {
+    for (let i = 0; i < array.length; i++) {
+      if (value > array[i]) {
+        return i + 1
+      }
+    }
+  }
+  //union
+  function union(...arrays) {
+
+  }
+
+
+
 
 
 
@@ -199,7 +263,7 @@ var fengruibin = function () {
     differenceBy: differenceBy,
     drop: drop,
     dropRight: dropRight,
-    dropRightWhilte: dropRightWhilte,
+    dropRightWhile: dropRightWhile,
     dropWhile: dropWhile,
     fill: fill,
     findIndex: findIndex,
@@ -212,5 +276,12 @@ var fengruibin = function () {
     indexOf: indexOf,
     initial: initial,
     intersection: intersection,
+    join: join,
+    last: last,
+    lastIndexOf: lastIndexOf,
+    pull: pull,
+    reverse: reverse,
+    sortedIndex: sortedIndex,
+    union: union,
   }
 }()
