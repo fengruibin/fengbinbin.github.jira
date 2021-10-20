@@ -209,7 +209,7 @@ var fengruibin = function () {
   }
   //lastIndexOf
   function lastIndexOf(array, value, fromIndex = array.length - 1) {
-    for (let i = fromIndex; i >= 0; i++) {
+    for (let i = fromIndex; i >= 0; i--) {
       if (array[i] === value) {
         return i
       }
@@ -245,9 +245,108 @@ var fengruibin = function () {
   }
   //union
   function union(...arrays) {
+    let result = []
+    for (let i = 0; i < arrays.length; i++) {
+      result = result.concat(arrays[i])
+    }
+    for (let i = 0; i < result.length - 1; i++) {
+      for (let j = i + 1; j < result.length; j++) {
+        if (result[j] == result[i]) {
+          result.splice(j, 1)
+        }
+      }
+    }
+    return result
+  }
+  //unionBy
+  function unionBy(...arrays) {
+    let result = []
+  }
+  //uniq
+  function uniq(array) {
+    let result = []
+    for (let i = 0; i < array.length - 1; i++) {
+      for (let j = i + 1; j < array.length; j++) {
+        if (array[j] == array[i]) {
+          array.splice(j, 1)
+        }
+      }
+      result = array
+    }
+    return result
+  }
+  //uniqBy
+  function uniqBy(array) {
 
   }
+  //unzip
+  function unzip(array) {
+    let result = []
+    for (let i = 0; i < array.length; i++) {
+      let item = array[i]
+      for (let j = 0; j < item.length; j++) {
+        if (!result[j]) {
+          result[j] = []
+          j--
+        } else {
+          result[j].push(item[j])
+        }
+      }
+    }
+    return result
+  }
+  //without
+  function without(array, ...values) {
+    let result = []
+    for (let i = 0; i < array.length; i++) {
+      if (!values.includes(array[i])) {
+        result.push(array[i])
+      }
+    }
+    return result
+  }
+  //xor
+  function xor(...arrays) {
+    let result = []
+    let array = [].concat(...arrays)
+    for (let i = 0; i < array.length; i++) {
+      let flag = true
+      for (let j = i + 1; j < array.length; j++) {
+        if (array[j] == array[i]) {
+          array.splice(j, 1)
+          j--
+          flag = false
+        }
+      }
+      if (flag) {
+        result.push(array[i])
+      }
+    }
+    return result
+  }
+  //zip
+  function zip(...arrays) {
+    let result = []
+    for (let i = 0; i < arrays.length; i++) {
+      let array = arrays[i]
+      for (let j = 0; j < array.length; j++) {
+        if (!result[j]) {
+          result[j] = []
+        } else {
+          result[j].push(array[j])
+        }
+      }
+    }
+    return result
+  }
+  //countBy
+  function countBy(collection) {
 
+  }
+  //every
+  function every(collection, predicate) {
+
+  }
 
 
 
@@ -283,5 +382,14 @@ var fengruibin = function () {
     reverse: reverse,
     sortedIndex: sortedIndex,
     union: union,
+    unionBy: unionBy,
+    uniq: uniq,
+    uniqBy: uniqBy,
+    unzip: unzip,
+    without: without,
+    xor: xor,
+    zip: zip,
+    countBy: countBy,
+    every: every,
   }
 }()
