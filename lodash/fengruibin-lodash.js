@@ -513,20 +513,106 @@ var fengruibin = function () {
   //isNaN
   function isNaN(value) {
     if (typeof value === 'object') {
-      value = value.valueof()
+      value = value.valueOf()
     }
     return value !== value
   }
+  //isNil
+  function isNil(value) {
+    if (value === null || value === undefined) {
+      return true
+    }
+    return false
+  }
+  //isNull
+  function isNull(value) {
+    if (value === null) {
+      return true
+    }
+    return false
+  }
+  //isNumber
+  function isNumber(value) {
+    return toString.call(value) === '[object Number]'
+  }
+  //
+  function isObject(value) {
+    return toString.call(value) === '[object Object]'
+  }
+  //
+  function isRegExp(value) {
+    return toString.call(value) === '[object RegExp]'
+  }
+  //isString
+  function isString(value) {
+    return toString.call(value) === '[object String]'
+  }
+  //isUndefined
+  function isUndefined(value) {
+    return toString, call(value) === '[object Undefined]'
+  }
+  //toArray
+  function toArray(value) {
+    let result = []
+    let type = typeof value
+    if (type === 'object') {
+      for (let val in value) {
+        result.push(value(val))
+      }
+    } else {
+      for (let i = 0; i < value.length; i++) {
+        result.push(value[i])
+      }
+    }
+    return result
+  }
+  //ceil
+  function ceil(number, precision = 0) {
+    let mul = Math.pow(10, precision)
+    let f = (number) => number % 1 === 0 ? number : parseInt(number) + 1
+    return f(number * mul) / mul
+  }
+  //max
+  function max(array) {
+    if (array.length > 0) {
+      let Max = -Infinity
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] > Max) {
+          Max = array[i]
+        }
+      }
+      return Max
+    } else {
+      return undefined
+    }
+  }
+  //maxBy
+  function maxBy(array, iteratee) {
 
+  }
+  //min
+  function min(array) {
+    if (array.length > 0) {
+      let Min = Infinity
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] < Min) {
+          Min = array[i]
+        }
+      }
+      return Min
+    } else {
+      return undefined
+    }
+  }
+  //round
+  function round(number, precision = 0) {
 
-
-
+  }
 
   //调用函数
   return {
     chunk: chunk,
     compact: compact,
-    concat: concat,
     difference: difference,
     differenceBy: differenceBy,
     drop: drop,
@@ -591,5 +677,21 @@ var fengruibin = function () {
     isFunction: isFunction,
     isMatch: isMatch,
     isNaN: isNaN,
+    isNil: isNil,
+    isNull: isNull,
+    isNumber: isNumber,
+    isString: isString,
+    isUndefined: isUndefined,
+    toArray: toArray,
+    ceil: ceil,
+    max: max,
+    maxBy: maxBy,
+    min: min,
+    round: round,
+
+
+
+
+    concat: concat,
   }
 }()
