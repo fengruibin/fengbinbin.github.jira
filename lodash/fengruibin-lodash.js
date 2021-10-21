@@ -345,9 +345,178 @@ var fengruibin = function () {
   }
   //every
   function every(collection, predicate) {
+    if (!collection) return true
+  }
+  //filter
+  function filter(collection, predicate) {
 
   }
+  //find
+  function find(collection, predicate, fromIndex = 0) {
+    predicate = iteratee(predicate)
+    for (let i = fromIndex; i < collection.length; i++) {
+      if (predicate(collection[i])) {
+        return collection[i]
+      }
+    }
+  }
+  //flatMap
+  function flatMap(collection, iteratee) {
+    let result = []
+    for (let item of collection) {
+      result.push(...iteratee(item))
+    }
+    return result
+  }
+  //flatMapDepth
+  function flatMapDepth(collection, iteratee, depth = 1) {
+    let result = []
+    for (let item of collection) {
+      result.push(iteratee(collection[item]))
+    }
+    return flattenDepth(result, depth)
+  }
+  //forEach
+  function forEach(collection, iteratee) {
+    for (let i = 0; i < collection.length; i++) {
+      iteratee(collection[i], i)
+    }
+    return collection
+  }
+  //groupBy
+  function groupBy(collection, iteratee) {
 
+  }
+  //keyBy
+  function keyBy(collection, iteratee) {
+
+  }
+  //map
+  function map(collection, iteratee) {
+    let result = []
+    if (Array.isArray(collection)) {
+      for (let i = 0; i < collection.length; i++) {
+        result.push(iteratee(collection[i], i, collection))
+      }
+    } else {
+      for (let item in collection) {
+        result.push(iteratee(item), i, collection)
+      }
+    }
+    return result
+  }
+  //partition
+  function partition(collection, predicate) {
+    let result = []
+
+  }
+  //reduce
+  function reduce(collection, iteratee, accumulator) {
+
+  }
+  //reduceRight
+  function reduceRight(collection, iteratee, accumulator) {
+
+  }
+  //reject
+  function reject(collection, predicate) {
+
+  }
+  //sample
+  function sample(collection) {
+    return collection[Math.floor(Math.random() * collection.length)]
+  }
+  //shuffle
+  function shuffle(collection) {
+    let result = []
+    for (let i = collection.length - 1; i >= 0; i--) {
+
+    }
+  }
+  //size
+  function size(collection) {
+    if (Array.isArray(collection) || typeof collection == 'string') {
+      return collection.length
+    } else {
+      return Object.keys(collection).length
+    }
+  }
+  //some
+  function some(collection, predicate) {
+    for (let i = 0; i < collection.length; i++) {
+      let item = predicate(collection[i])
+      if (item) {
+        return true
+      }
+    }
+    return false
+  }
+  //sortBy
+  function sortBy(collection, iteratee) {
+
+  }
+  //defer
+  function defer(func, ...args) {
+    return setTimeout(func(args), 1) - 1
+  }
+  //delay
+  function delay(func, wait, ...args) {
+    return setTimeout(func(args), wait) - 1
+  }
+  //isArguments
+  function isArguments(value) {
+
+  }
+  //isArray
+  function isArray(value) {
+    return Array.isArray(value) ? true : false
+  }
+  //isBoolean
+  function isBoolean(value) {
+    if (value === true || value === false) {
+      return true
+    }
+    return false
+  }
+  //isDate
+  function isDate(value) {
+    return toString.call(value) === '[object Date]' ? true : false
+  }
+  //isElement
+  function isElement(value) {
+    return toString.call(value) === '[object HTMLBodyElement]' ? true : false
+  }
+  //isEmpty
+  function isEmpty(value) {
+
+  }
+  //isEqual
+  function isEqual(value, other) {
+
+  }
+  //isError
+  function isError(value) {
+    return toString.call(value) === '[object Error]' ? true : false
+  }
+  //isFinite
+  function isFinite(value) {
+    return typeof value === 'number' && value > -Infinity && value < Infinity
+  }
+  //isFunction
+  function isFunction(value) {
+    return typeof value === 'function'
+  }
+  //isMatch
+  function isMatch(object, source) {
+
+  }
+  //isNaN
+  function isNaN(value) {
+    if (typeof value === 'object') {
+      value = value.valueof()
+    }
+    return value !== value
+  }
 
 
 
@@ -391,5 +560,36 @@ var fengruibin = function () {
     zip: zip,
     countBy: countBy,
     every: every,
+    filter: filter,
+    find: find,
+    flatMap: flatMap,
+    flatMapDepth: flatMapDepth,
+    forEach: forEach,
+    groupBy: groupBy,
+    keyBy: keyBy,
+    map: map,
+    partition: partition,
+    reduce: reduce,
+    reduceRight: reduceRight,
+    reject: reject,
+    sample: sample,
+    shuffle: shuffle,
+    size: size,
+    some: some,
+    sortBy: sortBy,
+    defer: defer,
+    delay: delay,
+    isArguments: isArguments,
+    isArray: isArray,
+    isBoolean: isBoolean,
+    isDate: isDate,
+    isElement: isElement,
+    isEmpty: isEmpty,
+    isEqual: isEqual,
+    isError: isError,
+    isFinite: isFinite,
+    isFunction: isFunction,
+    isMatch: isMatch,
+    isNaN: isNaN,
   }
 }()
