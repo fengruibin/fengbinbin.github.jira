@@ -1,0 +1,21 @@
+extends layout.pug 
+
+block content 
+  h2 登录
+  form(action="/login" method="POST")
+    div 用户名: 
+      br
+      input(type="text" name="name")
+    div 密码: 
+      br
+      input(type="password" name="password")
+    div 验证码: 
+      br
+      input(type="text" name="captcha")
+      img(src="/captcha-img")
+    input(hidden="" name="return_to" value=referer || "/")
+    br
+    button 登录
+    |
+    |
+    a(href="/forget-password") 忘记密码
